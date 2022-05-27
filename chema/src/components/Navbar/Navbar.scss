@@ -1,23 +1,26 @@
-*{
-    margin: 0;
-    padding: 0;
-}
 header{
-    background-color: #282c34;
-    min-height: 100vh;
+    background-color: #0055ff;
+    min-height: auto;
     align-items: center;
     justify-content: center;
     font-size: calc(10px + 2vmin);
     color: white;
     cursor: crosshair;
 }
+h1{
+    opacity: 0.2;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
 ul{
     display: flex;
     flex-direction: row;
-    background-color: #0e398f;
+    background-color: #0041f5;
     list-style: none ;
     justify-content: space-around;
     margin-top: 1vh;
+    padding-left: 0;
 }
  
 li:hover{
@@ -25,4 +28,5 @@ li:hover{
     url(https://cur.cursors-4u.net/cursors/cur-1/cur1.png),
     auto !important;
 }
+
  
