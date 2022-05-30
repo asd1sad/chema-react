@@ -3,24 +3,37 @@
 // 2- default
 // import Platos from './platos.js';
 
-
-import './styles.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './styles.css';
+ 
 import { Navbar } from './components/Navbar/Navbar'; 
-import { ItemListContainer } from './components/ItemListContainer/ItemListContainer'; 
+import { ItemCount } from './components/ItemsCount.js/ItemCount';
+import { useState } from 'react';
+ 
+
+
 
 function App() {
   
- const escuela = {
-   nombre: 'Moorlands',
+ const [mostrar,setMostrar] = useState(true)
+ 
+ const mostrarCounter = () => {
+   setMostrar(!mostrar)
  }
 
   return (
-
     <div>
-        <Navbar/>
+   
+          <Navbar/>
 
-        <ItemListContainer nombre={escuela.nombre}/>
+          <button className='btn btn-primary' onClick={mostrarCounter}>Mostrar/Ocultar</button>
+
+          {
+            mostrar ? <ItemCount/> : <div></div>
+          }
+
+       
+       
     </div>
   );
 }
