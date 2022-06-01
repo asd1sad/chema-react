@@ -22,25 +22,25 @@ export const ItemCount = () => {
     }
             
     useEffect( () => {
-                console.log('Montado')
+                // console.log('Montado')
 
                 return () => {
-                    console.log('Desmontado');
+                    // console.log('Desmontado');
                 }
             },[]);
 
 {
     if (cantidad == -1){
-        console.log(cantidad)
+        // console.log(cantidad)
         return setCantidad (0)
     } 
 }
     return (
         
-        <section className='cantidadProductos my-5'>
+        <section className='cantidadProductos'>
 
             <button id='agregarItem' className='btn btn-primary'onClick={restarCantidad} >-</button>
-            <p>{cantidad }</p>
+            <p>{cantidad}</p>
             <button id='restarItem' className='btn btn-primary' onClick={incrementarCantidad}>+</button>
 
         </section>

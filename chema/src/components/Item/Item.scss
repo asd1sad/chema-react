@@ -1,0 +1,24 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+ div{
+     background-color: rgba(221, 232, 11)
+ }
+ 
+ div .alo h2{
+    background-color: aquamarine;
+ }
+
+.alo{
+    margin:10vh 5px 0px 5px;
+    width: 30%;
+    text-align: center;
+ }
+img{
+    border-radius: 800px;
+    width: 70%;
+    max-width: 100%;
+    height: 40vh;
+    object-fit: cover;
+}

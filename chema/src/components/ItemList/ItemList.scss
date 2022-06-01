@@ -1,0 +1,14 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+div .contenedorProductos{
+    display: flex;
+    flex-wrap: wrap;
+}
+

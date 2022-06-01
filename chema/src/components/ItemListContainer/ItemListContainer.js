@@ -1,22 +1,48 @@
-import './ItemListContainer.scss'
-import Button from 'react-bootstrap/Button';
+import { useEffect, useState } from "react"
+import { Spinner } from "react-bootstrap"
+import { pedirDatos } from "../../Mock/pedirDatos"
+import ItemList from "../ItemList/ItemList"
+
+// q : string, limit : number
+// const busqueda = 'perritos'
+// const url = 'api.giphy.com/v1/gifs/search?api_key:124&q=${busqueda}&limit=20'
+
+// fetch(url)
 
 
-export const ItemListContainer = ( {nombre}) => {
+
+export const ItemListContainer = () => {
+
+    const [items, setItems] = useState([])
+    const [loading, setLoading] = useState(true)
+
+    useEffect(() => {
+        setLoading(true)
+
+        pedirDatos()
+            .then((resp) => {
+                setItems( resp )
+            })
+            .catch((error) => {
+                console.log('ERROR', error)
+            })
+            .finally(() => {
+                setLoading(false)
+            })
+    }, [])
 
     return (
-        <section className='container my-5'>
-            <h2>  Nuestro producto </h2>
-            <hr/>
-
-            <p> Bienvenido {nombre}</p>
-
-            <Button variant='success'>CLICK ME</Button>   
-
-            <br/><br/>
+        <section className="container my-5">
             
-            <button className='btn btn-primary'>CLICK ME</button>
+            {
+                loading
+                ?   <Spinner animation="border" role="status">
+                        <span className="visually-hidden">Loading...</span>
+                    </Spinner>
+
+                :  <ItemList items={items}/>
+            }
+            
         </section>
     )
 }
-

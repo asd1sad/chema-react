@@ -7,33 +7,28 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';
  
 import { Navbar } from './components/Navbar/Navbar'; 
-import { ItemCount } from './components/ItemsCount.js/ItemCount';
+// import { ItemCount } from './components/ItemsCount.js/ItemCount';
 import { useState } from 'react';
+import { ItemListContainer } from './components/ItemListContainer/ItemListContainer';
+ 
+
  
 
 
 
 function App() {
   
- const [mostrar,setMostrar] = useState(true)
+//  const [mostrar,setMostrar] = useState(true)
  
- const mostrarCounter = () => {
-   setMostrar(!mostrar)
- }
+//  const mostrarCounter = () => {
+//    setMostrar(!mostrar)
+//  }
 
   return (
     <div>
-   
-          <Navbar/>
+        <Navbar/>
 
-          <button className='btn btn-primary' onClick={mostrarCounter}>Mostrar/Ocultar</button>
-
-          {
-            mostrar ? <ItemCount/> : <div></div>
-          }
-
-       
-       
+        <ItemListContainer/> 
     </div>
   );
 }
