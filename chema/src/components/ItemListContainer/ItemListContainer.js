@@ -1,15 +1,13 @@
 import { useEffect, useState } from "react"
 import { Spinner } from "react-bootstrap"
-import { pedirDatos } from "../../Mock/pedirDatos"
-import ItemList from "../ItemList/ItemList"
+import { pedirDatos } from "../../Mock/pedirDatos" // x2
+import ItemList from "../ItemList/ItemList" // x2
 
 // q : string, limit : number
 // const busqueda = 'perritos'
 // const url = 'api.giphy.com/v1/gifs/search?api_key:124&q=${busqueda}&limit=20'
 
 // fetch(url)
-
-
 
 export const ItemListContainer = () => {
 
@@ -20,6 +18,7 @@ export const ItemListContainer = () => {
         setLoading(true)
 
         pedirDatos()
+        
             .then((resp) => {
                 setItems( resp )
             })
@@ -46,3 +45,30 @@ export const ItemListContainer = () => {
         </section>
     )
 }
+
+// import productos from "../../Mock/data"
+// import './ItemDetail.scss'
+
+
+// const ItemDetail = ( {productos} ) => {
+
+//     return <>
+             
+//             <h2>{item.nombre}</h2>
+//             <img src={item.img}/>
+//             <p>{item.desc}</p>
+//             <h4>Precio: ${item.precio}</h4>
+          
+    
+//     </>
+// }
+
+// export default ItemDetail
+
+// // (
+// //     <div className="contenedorProductosDetail">
+// //         {
+// //             item.map((item) => <Item key={item.id} item={item}/>)
+// //         }
+// //     </div>
+// // )

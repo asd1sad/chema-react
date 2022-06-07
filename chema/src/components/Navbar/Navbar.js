@@ -1,21 +1,19 @@
 import './Navbar.scss'
 import { GiIceBomb } from "react-icons/gi";
 import { GiKitchenKnives } from "react-icons/gi";
-
+import { Link } from "react-router-dom";
+ 
 export const Navbar = () => {
 
  
     return (
             <header className="header_navbar">
-        
-                <h1>s<GiIceBomb/>ldy<GiKitchenKnives/>ar</h1>
-            
+
+                <Link to={"/"}><h1>s<GiIceBomb/>ldy<GiKitchenKnives/>ar</h1></Link>
                 <nav>
-                    <ul>
-                        <li className="header_navLink">CABA</li>
-                        <li className="header_navLink">Buenos Aires</li>
-                        <li className="header_navLink">Interior</li>
-                    </ul>
+                        <Link to={"/envios/caba"} className="header_navLink">CABA</Link>
+                        <Link to={"/envios/ba"} className="header_navLink">BUENOS AIRES</Link>
+                        <Link to={"/envios/interior"} className="header_navLink">INTERIOR</Link>
                 </nav>
             </header>
     )

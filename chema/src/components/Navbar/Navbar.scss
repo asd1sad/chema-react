@@ -13,17 +13,16 @@ h1{
     align-items: flex-end;
     justify-content: center;
 }
-ul{
-    display: flex;
-    flex-direction: row;
+nav{
     background-color: #0041f5;
-    list-style: none ;
-    justify-content: space-around;
     margin-top: 1vh;
-    padding-left: 0;
+    display: flex;
+    justify-content: space-around;
 }
- 
-li:hover{
+nav a{
+    padding: 1vh;
+}
+a:hover{
     cursor: url(https://cur.cursors-4u.net/cursors/cur-1/cur1.ani),
     url(https://cur.cursors-4u.net/cursors/cur-1/cur1.png),
     auto !important;

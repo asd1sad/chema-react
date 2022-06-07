@@ -7,12 +7,11 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';
  
 import { Navbar } from './components/Navbar/Navbar'; 
-// import { ItemCount } from './components/ItemsCount.js/ItemCount';
-import { useState } from 'react';
 import { ItemListContainer } from './components/ItemListContainer/ItemListContainer';
- 
+import { ItemDetailContainer } from './components/ItemDetailContainer/ItemDetailContainer';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
+import { Nosotros } from './components/Nosotros/Nosotros'
 
- 
 
 
 
@@ -25,11 +24,18 @@ function App() {
 //  }
 
   return (
-    <div>
-        <Navbar/>
+    <BrowserRouter>
 
-        <ItemListContainer/> 
-    </div>
+      <Navbar/>
+
+          <Routes>  
+            <Route path='/' element={<ItemListContainer/>} />
+            <Route path='/item/:itemId' element={  <ItemDetailContainer/> } />
+            <Route path='/nosotros' element={ <Nosotros/>} />
+            <Route path='*' element={ <Navigate to={'/'}/> } />
+          </Routes>
+
+      </BrowserRouter>
   );
 }
 

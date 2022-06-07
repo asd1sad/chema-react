@@ -12,6 +12,7 @@ const Item = ({item}) => {
             {
                 [ <ItemCount key={item.id}/> ]
             }
+            
         </div>
     )
 }
