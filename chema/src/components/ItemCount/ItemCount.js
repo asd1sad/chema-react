@@ -1,50 +1,33 @@
-import { useState,useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import './ItemCount.scss'
  
 
-export const ItemCount = () => {
+export const ItemCount = ( {max, counter, setCounter } ) => {
 
- const [cantidad, setCantidad] = useState(0)
-
-    
-    // Sumar    
-    const  incrementarCantidad = () => {
-                setCantidad( 
-                    cantidad + 1
-               )
+    // Sumar   
+    const handleSumar = () => {
+        counter < max && setCounter(counter + 1)
     }
     
     // Restar
-    const  restarCantidad = () => {
-                setCantidad(  
-                    cantidad - 1,
-                    )
+    const handleRestar = () => {
+        counter > 0 && setCounter(counter - 1)
     }
-            
-    useEffect( () => {
-                // console.log('Montado')
+    
+    console.log(counter)
+    
 
-                return () => {
-                    // console.log('Desmontado');
-                }
-            },[]);
-
-{
-    if (cantidad == -1){
-        // console.log(cantidad)
-        return setCantidad (0)
-    } 
-}
     return (
         
         <section className='cantidadProductos'>
 
-            <button id='agregarItem' className='btn btn-primary'onClick={restarCantidad} >-</button>
-            <p>{cantidad}</p>
-            <button id='restarItem' className='btn btn-primary' onClick={incrementarCantidad}>+</button>
+            <button id='restarItem' className='btn btn-primary'onClick={handleRestar} >-</button>
+            <p>{counter}</p>
+            <button id='agregarItem' className='btn btn-primary' onClick={handleSumar}>+</button>
+
+            <button  className='btn btn-primary'/*  onClick={onAdd} */>Agregar al carrito</button>
 
         </section>
     )
 }
 
- 

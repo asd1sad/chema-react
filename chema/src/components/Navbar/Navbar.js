@@ -11,9 +11,9 @@ export const Navbar = () => {
 
                 <Link to={"/"}><h1>s<GiIceBomb/>ldy<GiKitchenKnives/>ar</h1></Link>
                 <nav>
-                        <Link to={"/envios/caba"} className="header_navLink">CABA</Link>
-                        <Link to={"/envios/ba"} className="header_navLink">BUENOS AIRES</Link>
-                        <Link to={"/envios/interior"} className="header_navLink">INTERIOR</Link>
+                        <Link to={'/categoria/remeras'} className="header_navLink">REMERAS</Link>
+                        <Link to={'/categoria/buzos'} className="header_navLink">BUZOS</Link>
+                        <Link to={'/categoria/calzado'} className="header_navLink">CALZADO</Link>
                 </nav>
             </header>
     )

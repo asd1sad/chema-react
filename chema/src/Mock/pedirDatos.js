@@ -2,7 +2,7 @@ import productos from "./data"
 
 export const pedirDatos = () => {
     return new Promise((resolve, reject) => {
-        setTimeout(() => {
+        setTimeout( () => {
             resolve(productos)
         }, 1000)
     })

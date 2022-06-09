@@ -4,6 +4,6 @@ export const getItem = () => {
     return new Promise((resolve,reject) => {
         setTimeout( () => {
             resolve(productos)
-        } , 3000)
+        } , 1000)
     })
 }

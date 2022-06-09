@@ -14,7 +14,8 @@ const productos = [
         nombre: "Producto 1",
         desc: "Una descripción",
         precio: 1900,
-        categorias: "remeras",
+        categoria: "remeras",
+        stock:10,
         img: a
     },
     {
@@ -22,7 +23,8 @@ const productos = [
         nombre: "Producto 2",
         desc: "Una descripción",
         precio: 2900,
-        categorias: "remeras",
+        categoria: "remeras",
+        stock:10, 
         img: b
     },
     {
@@ -30,7 +32,8 @@ const productos = [
         nombre: "Producto 3",
         desc: "Una descripción",
         precio: 3900,
-        categorias: "buzos",
+        categoria: "buzos",
+        stock:10,
         img: c
     },
     {
@@ -38,7 +41,8 @@ const productos = [
         nombre: "Producto 4",
         desc: "Una descripción",
         precio: 4900,
-        categorias: "buzos",
+        categoria: "buzos",
+        stock:10,
         img: d
     },
     {
@@ -46,7 +50,8 @@ const productos = [
         nombre: "Producto 5",
         desc: "Una descripción",
         precio: 5900,
-        categorias: "zapatillas",
+        categoria: "calzado",
+        stock:10,
         img: e
     },
     {
@@ -54,7 +59,8 @@ const productos = [
         nombre: "Producto 6",
         desc: "Una descripción",
         precio: 6900,
-        categorias: "zapatillas",
+        categoria: "calzado",
+        stock:10,  
         img: f
     },
 ]

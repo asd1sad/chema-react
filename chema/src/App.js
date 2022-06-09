@@ -30,6 +30,7 @@ function App() {
 
           <Routes>  
             <Route path='/' element={<ItemListContainer/>} />
+            <Route path='/categoria/:categoryId' element={<ItemListContainer/>} />
             <Route path='/item/:itemId' element={  <ItemDetailContainer/> } />
             <Route path='/nosotros' element={ <Nosotros/>} />
             <Route path='*' element={ <Navigate to={'/'}/> } />
