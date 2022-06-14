@@ -2,33 +2,12 @@ import './Navbar.scss'
 import { GiIceBomb } from "react-icons/gi";
 import { GiKitchenKnives } from "react-icons/gi";
 import { Link } from "react-router-dom";
-<<<<<<< HEAD
-import  CartWidget  from "../CartWidget/CartWidget";
-=======
 import { CartWidget } from "../CartWidget/CartWidget";
->>>>>>> authContext
  
 export const Navbar = () => {
 
  
     return (
-<<<<<<< HEAD
-        <header className="header2">
-        <div className="header__container">
-
-            <Link to={"/"}><h1 className="header__logo">PROYECTO CODER</h1></Link>
-            
-
-            <nav className="header__navbar">
-                <Link to={"/categorias/remeras"} className="header__navlink">Remeras</Link>
-                <Link to={"/categorias/buzos"} className="header__navlink">Buzos</Link>
-                <Link to={"/categorias/zapatillas"} className="header__navlink">Zapatillas</Link>
-            </nav>
-
-            <CartWidget/>
-        </div>
-    </header>
-=======
         <header className="header">
                 <div className='header_container'>
 
@@ -44,7 +23,6 @@ export const Navbar = () => {
                 </div>
 
         </header>
->>>>>>> authContext
     )
 }
 
