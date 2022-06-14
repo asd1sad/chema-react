@@ -2,12 +2,17 @@ import './Navbar.scss'
 import { GiIceBomb } from "react-icons/gi";
 import { GiKitchenKnives } from "react-icons/gi";
 import { Link } from "react-router-dom";
+<<<<<<< HEAD
 import  CartWidget  from "../CartWidget/CartWidget";
+=======
+import { CartWidget } from "../CartWidget/CartWidget";
+>>>>>>> authContext
  
 export const Navbar = () => {
 
  
     return (
+<<<<<<< HEAD
         <header className="header2">
         <div className="header__container">
 
@@ -23,6 +28,23 @@ export const Navbar = () => {
             <CartWidget/>
         </div>
     </header>
+=======
+        <header className="header">
+                <div className='header_container'>
+
+                  <Link to={"/"}><h1 className='header_logo'>s<GiIceBomb/>ldy<GiKitchenKnives/>ar</h1></Link>
+                
+                        <nav className='header_navbar'>
+                                <Link to={'/categoria/remeras'} className="header_navLink">REMERAS</Link>
+                                <Link to={'/categoria/buzos'} className="header_navLink">BUZOS</Link>
+                                <Link to={'/categoria/calzado'} className="header_navLink">CALZADO</Link>
+                        </nav>
+
+                  <CartWidget/>
+                </div>
+
+        </header>
+>>>>>>> authContext
     )
 }
 

@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import './ItemCount.scss'
  
 
-export const ItemCount = ( {max, counter, setCounter } ) => {
+export const ItemCount = ( {max, counter, setCounter ,onAdd} ) => {
 
     // Sumar   
     const handleSumar = () => {
@@ -25,7 +25,7 @@ export const ItemCount = ( {max, counter, setCounter } ) => {
             <p>{counter}</p>
             <button id='agregarItem' className='btn btn-primary' onClick={handleSumar}>+</button>
 
-            <button  className='btn btn-primary'/*  onClick={onAdd} */>Agregar al carrito</button>
+            <button  className='btn btn-primary' onClick={onAdd}>Agregar al carrito</button>
 
         </section>
     )
