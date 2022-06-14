@@ -1,10 +1,14 @@
 import { ItemCount } from "../ItemCount/ItemCount";
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useContext, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { CartContext } from "../Context/CartContext";
+ 
 // import { useParams } from "react-router-dom";
 
  const ItemDetail = ( {item} ) => {
-
+ 
+    const {addItem, isInCart} = useContext(CartContext)
+ 
     const [cantidad, setCantidad] = useState(0)
  
     const navigate = useNavigate()
@@ -13,14 +17,14 @@ import { useNavigate } from "react-router-dom";
         navigate(-1)
     }
 
-    // const handleAgregar = () => {
-    //     const itemToCart = {
-    //         ...item,
-    //         cantidad
-    //     }
+    const handleAgregar = () => {
+        const itemToCart = {
+            ...item,
+            cantidad
+        }
 
-    //     console.log(itemToCart)
-    // }
+        addItem(itemToCart)
+    }
     return (
 
             <div>
@@ -29,15 +33,24 @@ import { useNavigate } from "react-router-dom";
                 <p>{item.desc}</p>
                 <h4>Precio: ${item.precio}</h4>  
 
-                <button onClick={handleVolver}>VOLVER</button> 
+                <hr/>
+                {
+                        isInCart(item.id)
+                        ?   <Link to='/cart' className='btn btn-success my-3'>Terminar mi compra</Link>
+                        :
+                            <ItemCount
+                            max={item.stock}
+                            counter={cantidad}
+                            setCounter={setCantidad}
+                            onAdd={handleAgregar}
+                            />
+                }
 
-                <ItemCount
-                max={item.stock}
-                counter={cantidad}
-                setCounter={setCantidad}
-          
-                // onAdd={handleAgregar}
-                />
+
+
+
+                <br/>
+                <button onClick={handleVolver}>VOLVER</button> 
             </div>
 
     )

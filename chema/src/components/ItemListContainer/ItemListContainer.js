@@ -1,16 +1,15 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState, useContext } from "react"
 import { Spinner } from "react-bootstrap"
-import { pedirDatos } from "../../Mock/pedirDatos" // x2
-import ItemList from "../ItemList/ItemList" // x2
+import { pedirDatos } from "../../Mock/pedirDatos"  
+import ItemList from "../ItemList/ItemList"  
 import { useParams  } from "react-router-dom"
+ 
 
-// q : string, limit : number
-// const busqueda = 'perritos'
-// const url = 'api.giphy.com/v1/gifs/search?api_key:124&q=${busqueda}&limit=20'
-
-// fetch(url)
+ 
 
 export const ItemListContainer = () => {
+
+ 
 
     const [items, setItems] = useState([])
     const [loading, setLoading] = useState(true)
