@@ -51,29 +51,4 @@ export const ItemListContainer = () => {
     )
 }
 
-// import productos from "../../Mock/data"
-// import './ItemDetail.scss'
 
-
-// const ItemDetail = ( {productos} ) => {
-
-//     return <>
-             
-//             <h2>{item.nombre}</h2>
-//             <img src={item.img}/>
-//             <p>{item.desc}</p>
-//             <h4>Precio: ${item.precio}</h4>
-          
-    
-//     </>
-// }
-
-// export default ItemDetail
-
-// // (
-// //     <div className="contenedorProductosDetail">
-// //         {
-// //             item.map((item) => <Item key={item.id} item={item}/>)
-// //         }
-// //     </div>
-// // )

@@ -1,8 +1,11 @@
 import { useState } from 'react'
+import { useAuthContext } from '../Context/AuthContext'
 import './LoginScreen.scss'
 
-export const LoginScreen = () => {
+const LoginScreen = () => {
     
+    const {login} = useAuthContext()
+
     const [values, setValues] = useState({
         email:'',
         password:''
@@ -18,7 +21,7 @@ export const LoginScreen = () => {
     const handleSubmit = (e) => {
         e.preventDefault()
 
-        console.log(values)
+        login(values)
     }
 
     return(
@@ -44,10 +47,12 @@ export const LoginScreen = () => {
                     className='form-control my-4'
                     placeholder='Contraseña'
                     />
-
+ 
                     <button type='submit' className='btn btn-primary'>LOGIN</button>
                 </form>
             </div>
         </div>
     )
 }
+
+export default LoginScreen

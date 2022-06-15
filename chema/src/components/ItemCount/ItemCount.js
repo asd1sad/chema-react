@@ -1,22 +1,16 @@
-import { useEffect, useState } from 'react'
 import './ItemCount.scss'
  
 
 export const ItemCount = ( {max, counter, setCounter ,onAdd} ) => {
 
-    // Sumar   
     const handleSumar = () => {
         counter < max && setCounter(counter + 1)
     }
     
-    // Restar
     const handleRestar = () => {
         counter > 0 && setCounter(counter - 1)
     }
     
-    console.log(counter)
-    
-
     return (
         
         <section className='cantidadProductos'>
