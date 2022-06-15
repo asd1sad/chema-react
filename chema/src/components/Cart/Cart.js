@@ -20,6 +20,7 @@ export const Cart = () => {
                 </div>
                 ))
             }
+   
 
             <h4>TOTAL: ${totalPrice()}</h4>
 

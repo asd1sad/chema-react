@@ -45,10 +45,7 @@ import { CartContext } from "../Context/CartContext";
                             onAdd={handleAgregar}
                             />
                 }
-
-
-
-
+ 
                 <br/>
                 <button onClick={handleVolver}>VOLVER</button> 
             </div>
