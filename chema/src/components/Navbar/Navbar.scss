@@ -30,6 +30,13 @@
         .widget{
             color: white;
             font-size: 3vh;
+            opacity: 1;
+            visibility: visible;
+            transition: all .3s ease-in-out;
+        }
+        .widget-hidden {
+            visibility: hidden;
+            opacity: 0;
         }
     }
 }

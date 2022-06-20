@@ -9,4 +9,4 @@ export const UserInfo = () =>{
             <button onClick={logout}className='btn btn-danger'>LOGOUT</button>
         </div>
     )
-}
+} 

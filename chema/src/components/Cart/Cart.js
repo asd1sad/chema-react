@@ -1,10 +1,14 @@
 import { useCartContext } from "../Context/CartContext"
 import { BsFillTrashFill } from 'react-icons/bs'
+import { EmptyCart } from "./EmptyCart"
 
 export const Cart = () => {
 
-        const {cart, totalPrice,emptyCart, removeItem} = useCartContext()
+    const {cart, totalPrice,emptyCart, removeItem} = useCartContext()
      
+
+    if (cart.length === 0) return <EmptyCart/>
+
     return (
         <div>   
             <h2>Tu Compra</h2>
@@ -20,7 +24,7 @@ export const Cart = () => {
                 </div>
                 ))
             }
-   
+    
 
             <h4>TOTAL: ${totalPrice()}</h4>
 

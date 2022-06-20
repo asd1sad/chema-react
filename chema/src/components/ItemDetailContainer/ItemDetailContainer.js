@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react"
-import { Spinner } from "react-bootstrap"
-import { pedirDatos } from "../../Mock/pedirDatos"  
 import { useParams  } from "react-router-dom"
 import ItemDetail from "../ItemDetail/ItemDetail" 
+import { doc, getDoc } from "firebase/firestore" 
+import { db } from "../../firebase/config" 
+import { Loader } from "../Loader/Loader"
  
 export const ItemDetailContainer = () => {
 
@@ -13,33 +14,50 @@ export const ItemDetailContainer = () => {
 
     useEffect(() => {
         setLoading(true)
-
-        pedirDatos()
-            .then((resp) => {
-               setItem( resp.find((item) => item.id === Number(itemId)))
+        // 1 armar la referencia
+        const docRef = doc(db , 'productos', itemId)
+        // 2 (async) llamar a Firestore
+        getDoc(docRef)
+            .then((doc) => {
+                setItem(  {id: doc.id, ...doc.data()} )
             })
-            .catch((error) => {
-                console.log('ERRORasdasdasd', error)
-            })
-            .finally(()=>{
+            .finally(() => {
                 setLoading(false)
-            })
+        })
+
     }, [])
-
-
 
     return (
         <section className="container my-5">
        
             {
                 loading
-                ?   <Spinner animation="border" role="status">
-                        <span className="visually-hidden">Loading...</span>
-                    </Spinner>
-
+                ? <Loader/>
                 :  <ItemDetail item={item} />
             }
      
         </section>
     )
 }
+
+
+
+
+
+
+
+
+
+
+
+// pedirDatos()
+// .then((resp) => {
+//    setItem( resp.find((item) => item.id === Number(itemId)))
+// })
+// .catch((error) => {
+//     console.log('ERRORasdasdasd', error)
+// })
+// .finally(()=>{
+//     setLoading(false)
+// })
+//

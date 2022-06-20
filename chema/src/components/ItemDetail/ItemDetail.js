@@ -54,4 +54,3 @@ import { CartContext } from "../Context/CartContext";
 }
 
 export default ItemDetail
-
