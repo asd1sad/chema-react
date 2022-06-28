@@ -15,8 +15,8 @@ export const Navbar = () => {
                 
                         <nav className='header_navbar'>
                                 <Link to={'/categoria/remeras'} className="header_navLink">REMERAS</Link>
-                                <Link to={'/categoria/buzos'} className="header_navLink">BUZOS</Link>
-                                <Link to={'/categoria/calzado'} className="header_navLink">CALZADO</Link>
+                                <Link to={'/categoria/pantalones'} className="header_navLink">pantalones</Link>
+                                <Link to={'/categoria/extras'} className="header_navLink">extras</Link>
                         </nav>
 
                   <CartWidget/>

@@ -1,14 +1,17 @@
 import { useState } from 'react'
 import { useAuthContext } from '../../Context/AuthContext'
+import './LoginScreen.scss'
 
-
-export const LoginScreen = () => {
-
+const LoginScreen = () => {
+    
     const {login, error} = useAuthContext()
 
+    // console.log(error.email)
+    // console.log(error.password)
+
     const [values, setValues] = useState({
-        email: '',
-        password: ''
+        email:'',
+        password:''
     })
 
     const handleInputChange = (e) => {
@@ -24,7 +27,7 @@ export const LoginScreen = () => {
         login(values)
     }
 
-    return (
+    return(
         <div className="login-screen">
             <div className="login-container">
                 <h2>Login</h2>
@@ -32,32 +35,33 @@ export const LoginScreen = () => {
 
                 <form onSubmit={handleSubmit}>
                     <input
-                        type={"email"} 
-                        name="email"
+                        type={'email'}
+                        name='email'
                         value={values.email}
                         onChange={handleInputChange}
-                        className="form-control my-4"
+                        className='form-control my-4'
                         placeholder='Email de usuario'
                     />
                     {error.email && <small className='text-danger'>{error.email}</small>}
 
                     <input
-                        type={"password"} 
-                        name="password"
+                        type={'password'}
+                        name='password'
                         value={values.password}
                         onChange={handleInputChange}
-                        className="form-control my-4"
+                        className='form-control my-4'
                         placeholder='Contraseña'
                     />
                     {error.password && <small className='text-danger'>{error.password}</small>}
 
                     <br/>
-                    <button type='submit' className='btn btn-primary'>Enviar</button>
+                    <button type='submit' className='btn btn-primary'>LOGIN</button>
                 </form>
 
             </div>
-
+            
         </div>
     )
 }
 
+export default LoginScreen

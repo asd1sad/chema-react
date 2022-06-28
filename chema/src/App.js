@@ -1,7 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';
-import { CartProvider } from './components/Context/CartContext'; 
-import { AuthProvider } from './components/Context/AuthContext';
+import { CartProvider } from './Context/CartContext'; 
+import { AuthProvider } from './Context/AuthContext';
 import{ AppRouter } from './routes/AppRouter'
 
 function App() {

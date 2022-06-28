@@ -1,67 +1,101 @@
-import a from "./1.png";
-import b from "./2.png";
-import c from "./3.png";
-import d from "./4.png";
-import e from "./5.png";
-import f from "./6.png";
-
+import a from "./1.jpg";
+import b from "./2.jpg";
+import c from "./3.jpg";
+import d from "./color.jpg";
+import h from "./descarga.jpg"
 
 
 
 const productos = [
     {
         id: 1,
-        nombre: "Producto 1",
+        nombre: "camisa beltza corta",
         desc: "Una descripción",
-        precio: 1900,
+        precio: 3500,
         categoria: "remeras",
         stock:10,
-        img: a
+        img: a,
+        img2: h
     },
     {
         id: 2,
-        nombre: "Producto 2",
+        nombre: "camisa beltza larga",
         desc: "Una descripción",
-        precio: 2900,
+        precio: 5000,
         categoria: "remeras",
         stock:10, 
-        img: b
+        img: b ,
+        img2: h
     },
     {
         id: 3,
-        nombre: "Producto 3",
+        nombre: "remera oversize",
         desc: "Una descripción",
-        precio: 3900,
-        categoria: "buzos",
+        precio: 3500,
+        categoria: "remeras",
         stock:10,
-        img: c
+        img: c ,
+        img2: h
     },
     {
         id: 4,
-        nombre: "Producto 4",
+        nombre: "remera crop",
         desc: "Una descripción",
-        precio: 4900,
-        categoria: "buzos",
+        precio: 5000,
+        categoria: "remeras",
         stock:10,
-        img: d
+        img: d ,
+        img2: h
     },
     {
         id: 5,
-        nombre: "Producto 5",
+        nombre: "bermuda svart",
         desc: "Una descripción",
-        precio: 5900,
-        categoria: "calzado",
+        precio: 6000,
+        categoria: "pantalones",
         stock:10,
-        img: e
+        img: e ,
+        img2: h
     },
     {
         id: 6,
-        nombre: "Producto 6",
+        nombre: "pantalon qora",
         desc: "Una descripción",
-        precio: 6900,
-        categoria: "calzado",
+        precio: 6000,
+        categoria: "pantalones",
         stock:10,  
-        img: f
+        img: a ,
+        img2: h
+    },
+    {
+        id: 7,
+        nombre: "pantalon neg",
+        desc: "Una descripción",
+        precio: 6000,
+        categoria: "pantalones",
+        stock:10,  
+        img: a ,
+        img2: h
+    },
+    {
+        id: 8,
+        nombre: "mangas",
+        desc: "Una descripción",
+        precio: 3500,
+        categoria: "extras",
+        stock:10,  
+        img: b ,
+        img2: h
+    },
+    {
+        id: 9,
+        nombre: "mitones",
+        desc: "Una descripción",
+        precio: 3000,
+        categoria: "extras",
+        stock: 10,  
+        img: c ,
+        img2: h
     },
 ]
 export default productos

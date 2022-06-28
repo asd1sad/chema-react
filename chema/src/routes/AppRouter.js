@@ -1,6 +1,6 @@
 
 import { BrowserRouter } from 'react-router-dom'
-import { useAuthContext } from '../components/Context/AuthContext';
+import { useAuthContext } from '../Context/AuthContext';
 import { PrivateRoutes } from './PrivateRoutes';
 import { PublicRoutes } from './PublicRoutes';
  
