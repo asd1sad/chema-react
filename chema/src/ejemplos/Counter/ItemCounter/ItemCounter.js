@@ -20,7 +20,7 @@ export const Counter = () => {
     }
     
     useEffect(() =>{
-        console.log('Componente montado')
+        // console.log('Componente montado')
         
     },[])
 

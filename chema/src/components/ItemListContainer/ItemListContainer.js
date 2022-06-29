@@ -28,7 +28,7 @@ export const ItemListContainer = () => {
                         ...doc.data()
                     }
                 }) 
-                console.log(newItems)
+                // console.log(newItems)
                 setItems( newItems )
             })
             .finally(() => {

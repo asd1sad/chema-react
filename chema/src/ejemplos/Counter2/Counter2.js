@@ -15,7 +15,7 @@ export const Counter2   = () => {
     }
     
     useEffect(() =>{
-        console.log('Componente montado')
+        // console.log('Componente montado')
         
     },[])
 

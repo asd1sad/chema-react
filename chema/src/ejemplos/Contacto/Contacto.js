@@ -20,8 +20,8 @@ export const Contacto = () => {
         const handleSubmit = (e) => {
             e.preventDefault()
  
-            console.log("Submit del form")
-            console.log(values)
+            // console.log("Submit del form")
+            // console.log(values)
     }
 
     return (

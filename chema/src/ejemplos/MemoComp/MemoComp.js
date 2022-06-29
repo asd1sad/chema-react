@@ -3,7 +3,7 @@ import React from 'react'
 
 export const MemoComp = React.memo(() => {
 
-    console.log('Me renderice')
+    // console.log('Me renderice')
 
     return (
         <div>

@@ -21,7 +21,7 @@ export const AuthProvider = ({children}) => {
 
     const [error, setError] = useState({})
 
-    console.log(auth)
+    // console.log(auth)
 
     const login = (values) => {
         const {email, password} = values
