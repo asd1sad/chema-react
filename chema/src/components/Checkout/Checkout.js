@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useCartContext } from '../../Context/CartContext'
 import { Navigate } from 'react-router-dom'
-import { collection , addDoc } from 'firebase/firestore'
+import { collection ,getDocs ,addDoc , writeBatch, query , where , documentId } from 'firebase/firestore'
 import { db } from '../../firebase/config'
 
 export const Checkout = () => {
@@ -22,7 +22,7 @@ export const Checkout = () => {
             [e.target.name]: e.target.value
         })
     }
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault()
 
         if ( values.nombre.length < 5) {
@@ -44,14 +44,38 @@ export const Checkout = () => {
             total: totalPrice()
         }
         
+        const batch = writeBatch(db)
         const ordenesRef = collection(db, 'ordenes')
-        
-        addDoc(ordenesRef, orden)
-            .then((doc) => {
-                setOrderId(doc.id)
+        const productosRef = collection(db, 'productos') 
+        const q = query(productosRef, where(documentId(), 'in', cart.map(item => item.id)))
 
-                emptyCart()
-            })
+        const outOfStock = []
+        const productos = await getDocs(q)
+ 
+        productos.docs.forEach((doc) => {
+            const itemToUpdate = cart.find(prod => prod.id === doc.id)
+ 
+            if ((doc.data().stock - itemToUpdate.cantidad) >= 0) {
+                batch.update(doc.ref, {
+                    stock: doc.data().stock - itemToUpdate.cantidad
+                })
+            } else {
+                outOfStock.push(itemToUpdate)
+            }
+        })
+
+        if (outOfStock.length === 0) {
+            addDoc(ordenesRef, orden)
+                .then((doc) => {
+                    batch.commit()
+                    setOrderId(doc.id)
+                    emptyCart()
+                })          
+        } else {
+            console.log(outOfStock)
+            alert(`Item sin stock: ${outOfStock}`)
+            // alert('Item sin stock:' ,outOfStock)
+        }
     }
 
     if (orderId) {
@@ -62,7 +86,7 @@ export const Checkout = () => {
                 <p>Su numero de orden es : {orderId}</p>
             </div>
         )
-    }
+    }  
     
     if (cart.length === 0) {
         return <Navigate to='/'/>
@@ -104,3 +128,20 @@ export const Checkout = () => {
         </div>
     )
 } 
+
+// cart.forEach((item) => {
+
+//     const docRef = doc(db, 'productos', item.id)
+
+  
+// })   
+// getDoc(docRef)
+// .then((doc) => {
+//     if((doc.data().stock - item.cantidad) >= 0){
+//         updateDoc(docRef, {
+//             stock: doc.data().stock - item.cantidad
+//     })
+// } else {
+//     alert('No hay stock del producto: ' + item.nombre)
+// }
+// })
